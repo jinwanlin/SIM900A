@@ -1,6 +1,6 @@
 import time
 import serial
-ser = serial.Serial( 
+ser = serial.Serial(
   port='/dev/ttyAMA0',
   baudrate=9600,
   parity=serial.PARITY_ODD,
@@ -8,11 +8,12 @@ ser = serial.Serial(
   bytesize=serial.SEVENBITS
 )
 data = ''
-while ser.inWaiting() > 0:
-  data += ser.read(1)
-if data != '':
-  hexShow(data)
-  
+while(True):
+  while ser.inWaiting() > 0:
+    data += ser.read(1)
+  if data != '':
+    hexShow(data)
+#  print('------------') 
   
 
 #
