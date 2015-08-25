@@ -1,6 +1,6 @@
 import time
 import serial
-ser = serial.Serial( #下面这些参数根据情况修改
+ser = serial.Serial( 
   port='/dev/ttyAMA0',
   baudrate=9600,
   parity=serial.PARITY_ODD,
